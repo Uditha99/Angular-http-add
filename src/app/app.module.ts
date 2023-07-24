@@ -10,6 +10,9 @@ import { DeleteComponent } from './components/delete/delete.component';
 import { NewComponent } from './components/new/new.component';
 import { UpdateComponent } from './components/update/update.component';
 import { FindComponent } from './components/find/find.component';
+import {HttpClientModule} from "@angular/common/http";
+import {MatInputModule} from "@angular/material/input";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -20,12 +23,15 @@ import { FindComponent } from './components/find/find.component';
     UpdateComponent,
     FindComponent
   ],
-    imports: [
-        BrowserModule,
-        BrowserAnimationsModule,
-        AppRoutingModule,
-        MatButtonModule
-    ],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    MatButtonModule,
+    HttpClientModule,
+    MatInputModule,
+    FormsModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
