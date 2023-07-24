@@ -4,16 +4,28 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
+import { AllComponent } from './components/all/all.component';
+import {MatButtonModule} from "@angular/material/button";
+import { DeleteComponent } from './components/delete/delete.component';
+import { NewComponent } from './components/new/new.component';
+import { UpdateComponent } from './components/update/update.component';
+import { FindComponent } from './components/find/find.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AllComponent,
+    DeleteComponent,
+    NewComponent,
+    UpdateComponent,
+    FindComponent
   ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    AppRoutingModule
-  ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        AppRoutingModule,
+        MatButtonModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
