@@ -1,27 +1,7 @@
-# HttpApp1
+![image](https://github.com/Uditha99/Angular-http-add/assets/109640405/3a1660b5-3292-4827-9ad8-eb504683280b)
+![image](https://github.com/Uditha99/Angular-http-add/assets/109640405/50975a7d-30a6-4bcf-b6c4-86da76c2d04b)
+![image](https://github.com/Uditha99/Angular-http-add/assets/109640405/e3894d2e-cde8-406e-b065-eddeda95d0c0)
+![image](https://github.com/Uditha99/Angular-http-add/assets/109640405/dc17f6ca-b35d-44b9-a54e-5fb1d702a3cb)
+![image](https://github.com/Uditha99/Angular-http-add/assets/109640405/859b0cb3-a36a-4d6c-9517-bc8611a1943a)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.5.
 
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
