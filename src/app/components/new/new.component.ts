@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {HttpClient} from "@angular/common/http";
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 
 @Component({
@@ -10,7 +11,7 @@ import {HttpClient} from "@angular/common/http";
 })
 export class NewComponent {
 
-  constructor(private http:HttpClient) {
+  constructor(private http:HttpClient,private _snackBar: MatSnackBar) {
   }
 
     form = new FormGroup({
@@ -30,7 +31,14 @@ export class NewComponent {
     subscribe(response=>{
 
       if(response){
-        alert('update')
+
+        this._snackBar.open('saved','close',{
+          horizontalPosition:"end",
+          verticalPosition:"top",
+          duration:5000,
+          direction:"ltr"
+
+        })
       }
 
 

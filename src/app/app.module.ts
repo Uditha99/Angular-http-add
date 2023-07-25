@@ -13,6 +13,7 @@ import { FindComponent } from './components/find/find.component';
 import {HttpClientModule} from "@angular/common/http";
 import {MatInputModule} from "@angular/material/input";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {MatSnackBar, MatSnackBarModule} from "@angular/material/snack-bar";
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
         HttpClientModule,
         MatInputModule,
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        MatSnackBarModule
     ],
   providers: [],
   bootstrap: [AppComponent]
