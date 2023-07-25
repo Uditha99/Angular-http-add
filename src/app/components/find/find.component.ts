@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
+import {PostService} from "../../Service/post.service";
 
 @Component({
   selector: 'app-find',
@@ -10,10 +11,10 @@ export class FindComponent {
 
   searchID:string = ''
   list : Array<any> = []
-  constructor(private http:HttpClient) {
+  constructor(private postService:PostService) {
   }
   LoadData() {
-    this.http.get<any>('https://jsonplaceholder.typicode.com/posts?id='+this.searchID).
+    this.postService.find(this.searchID).
     subscribe(response=>{
       console.log(response)
       this.list=response

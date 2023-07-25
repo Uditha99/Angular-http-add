@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
+import {PostService} from "../../Service/post.service";
 
 @Component({
   selector: 'app-all',
@@ -9,10 +10,10 @@ import {HttpClient} from "@angular/common/http";
 export class AllComponent implements OnInit{
 
   list : Array<any> = []
-  constructor(private http:HttpClient) {
+  constructor(private postService:PostService) {
   }
   ngOnInit() {
-    this.http.get<any>('https://jsonplaceholder.typicode.com/posts').
+    this.postService.findAll().
     subscribe(response=>{
       console.log(response)
       this.list=response

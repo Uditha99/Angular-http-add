@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {MatSnackBar} from "@angular/material/snack-bar";
+import {PostService} from "../../Service/post.service";
+import {SnackBarService} from "../../Service/snack-bar.service";
 
 @Component({
   selector: 'app-delete',
@@ -10,10 +12,10 @@ import {MatSnackBar} from "@angular/material/snack-bar";
 export class DeleteComponent implements OnInit{
 
   list : Array<any> = []
-  constructor(private http:HttpClient,private _snackBar: MatSnackBar) {
+  constructor(private postService:PostService,private _snackBar:SnackBarService) {
   }
   ngOnInit() {
-    this.http.get<any>('https://jsonplaceholder.typicode.com/posts').
+    this.postService.findAll().
     subscribe(response=>{
       console.log(response)
       this.list=response
@@ -22,17 +24,11 @@ export class DeleteComponent implements OnInit{
 
   DeleteData(id:any){
       if(confirm("Are you sure delete" + id)){
-        this.http.delete<any>('https://jsonplaceholder.typicode.com/posts/'+id).
+        this.postService.delete(id).
         subscribe(response=>{
           if(response){
 
-            this._snackBar.open('saved','close',{
-              horizontalPosition:"end",
-              verticalPosition:"top",
-              duration:5000,
-              direction:"ltr"
-
-            })
+            this._snackBar.trigger('Deleted' , 'close')
           }
 
           for(let i=0;i<this.list.length;i++){

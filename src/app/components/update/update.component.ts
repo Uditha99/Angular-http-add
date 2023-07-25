@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {PostService} from "../../Service/post.service";
+import {SnackBarService} from "../../Service/snack-bar.service";
 
 @Component({
   selector: 'app-update',
@@ -12,10 +14,10 @@ export class UpdateComponent {
 
   searchID:string = ''
 
-  constructor(private http:HttpClient,private _snackBar: MatSnackBar) {
+  constructor(private postServise:PostService,private _snackBar: SnackBarService) {
   }
   LoadData() {
-    this.http.get<any>('https://jsonplaceholder.typicode.com/posts?id='+this.searchID).
+    this.postServise.find(this.searchID).
     subscribe(response=>{
       this.form.patchValue({
         id: response[0].id,
@@ -38,23 +40,17 @@ export class UpdateComponent {
 
   })
   updateData(){
-    this.http.put<any>('https://jsonplaceholder.typicode.com/posts/' + this.searchID  , {
-      id:this.form.get('id')?.value,
-      userId:this.form.get('userId')?.value,
-      tittle:this.form.get('tittle')?.value,
-      body:this.form.get('body')?.value
-    }).
+    this.postServise.update(
+      this.form.get('id')?.value,
+      this.form.get('userId')?.value,
+      this.form.get('tittle')?.value,
+      this.form.get('body')?.value
+    ).
     subscribe(response=>{
 
       if(response){
 
-        this._snackBar.open('saved','close',{
-          horizontalPosition:"end",
-          verticalPosition:"top",
-          duration:5000,
-          direction:"ltr"
-
-        })
+        this._snackBar.trigger('update','close')
       }
 
 
