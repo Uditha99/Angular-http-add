@@ -12,7 +12,7 @@ import { UpdateComponent } from './components/update/update.component';
 import { FindComponent } from './components/find/find.component';
 import {HttpClientModule} from "@angular/common/http";
 import {MatInputModule} from "@angular/material/input";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -23,15 +23,16 @@ import {FormsModule} from "@angular/forms";
     UpdateComponent,
     FindComponent
   ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    AppRoutingModule,
-    MatButtonModule,
-    HttpClientModule,
-    MatInputModule,
-    FormsModule
-  ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        AppRoutingModule,
+        MatButtonModule,
+        HttpClientModule,
+        MatInputModule,
+        FormsModule,
+        ReactiveFormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
