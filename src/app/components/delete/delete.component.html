@@ -1,1 +1,22 @@
-<p>delete works!</p>
+<table class="table table hover">
+  <thead>
+  <tr>
+    <th>#id</th>
+    <th>User_Id</th>
+    <th>Tittle</th>
+    <th>Body</th>
+    <th>Delete</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let tempData of list">
+    <td>{{tempData.id}}</td>
+    <td>{{tempData.userId}}</td>
+    <td>{{tempData.title}}</td>
+    <td>{{tempData.body}}</td>
+    <td> <button  mat-raised-button color="warn"
+      (click)="DeleteData(tempData.id)"
+    ><mat-icon>delete</mat-icon> Delete</button> </td>
+  </tr>
+  </tbody>
+</table>
